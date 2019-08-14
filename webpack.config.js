@@ -23,6 +23,7 @@ module.exports = {
         contentBase:'src',  //指定托管根目录
         hot:true  //启用热更新     的第一步
     },
+
     plugins:[  //配置插件的节点
         new webpack.HotModuleReplacementPlugin(),   //new一个热更新的模块对象，这是启用热更新的第三步
     
