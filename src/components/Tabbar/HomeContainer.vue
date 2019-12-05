@@ -3,10 +3,9 @@
         <!-- 轮播图区域 -->
         <mt-swipe :auto="2000">
             <mt-swipe-item v-for='item in lunbotuList' :key='item.url'>
-                <img :src="item.img" alt="">
+                <img :src="item.img" alt="" width="100%" height="100%">
             </mt-swipe-item>
-            <mt-swipe-item>2</mt-swipe-item>
-            <mt-swipe-item>3</mt-swipe-item>
+
         </mt-swipe>
 
         <!-- 首页六宫格 -->
@@ -47,7 +46,7 @@ export default {
     
     data(){
         return {
-            lunbotuList:[]
+            lunbotuList:[]  //保存轮播图的数组
         }
     },
     created(){
@@ -55,16 +54,16 @@ export default {
     },
     methods:{
         getLunbotu(){
-            this.$http.get('http://vue.studyit.io/api/getlunbo').then(result =>{
+            this.$http.get('api/getlunbo').then(result =>{
                 // this.$set('lunbotuList',reault.data)
 
                 console.log(result.body)
                 if(result.body.status === 0){
                     
                     this.lunbotuList = result.body.message;
-                    Toast ('成功')
+                    Toast ('数据获取成功')
                 }else{
-                    Toast ('faild')
+                    Toast ('数据获取失败！！！')
                 }
             })
         }
