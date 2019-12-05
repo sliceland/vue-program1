@@ -6,6 +6,13 @@
 
         <mt-button type='primary'>发表评论</mt-button>
 
+        <div class="cmt-list">
+            <div class="cmt-item">
+                <div class="cmt-title"></div>
+                <div class="cmt-body"></div>
+            </div>
+        </div>
+
         <mt-button type='danger' plain>加载更多</mt-button>
     </div>
 </template>

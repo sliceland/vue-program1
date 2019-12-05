@@ -56,7 +56,7 @@ var vm = new Vue({
 
     },
     render:c=>c(app),
-    router    //一定记住在vue实例上挂载路有对象   
+    router    //一定记住在vue实例上挂载路由对象   
 })
 
 

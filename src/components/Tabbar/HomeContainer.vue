@@ -5,8 +5,8 @@
             <mt-swipe-item v-for='item in lunbotuList' :key='item.url'>
                 <img :src="item.img" alt="">
             </mt-swipe-item>
-            <!-- <mt-swipe-item>2</mt-swipe-item>
-            <mt-swipe-item>3</mt-swipe-item> -->
+            <mt-swipe-item>2</mt-swipe-item>
+            <mt-swipe-item>3</mt-swipe-item>
         </mt-swipe>
 
         <!-- 首页六宫格 -->
