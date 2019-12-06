@@ -16,7 +16,8 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
 Vue.http.options.root = 'http://www.liulongbin.top:3005'  //配置vueresource的全局接口，将来要是接口改变只需修改这里即可，必须放在Vue.use(VueResource)之后
-
+//全局设置 post 请求时表单数据格式组织形式  
+Vue.http.options.emulateJSON = true;
 
 //导入Tabbar里的路由组件
 import HomeContainer from './components/Tabbar/HomeContainer.vue'
@@ -27,6 +28,7 @@ import SearchContainer from './components/Tabbar/SearchContainer.vue'
 
 //导入二级路由了
 import NewsList from './components/news/NewsList.vue'
+import PhotoList from './components/photos/PhotoList.vue'
 
 // 导入三级路由
 import Newsinfo from './components/news/Newsinfo.vue'
@@ -54,7 +56,8 @@ var router = new VueRouter({
         { path:'/search',component: SearchContainer },
 
         { path:'/home/newslist',component:NewsList},
-        { path: '/home/newsinfo/:id',component:Newsinfo} //此处id前加了冒号，表示要匹配id，代表放的是参数，
+        { path: '/home/newsinfo/:id',component:Newsinfo}, //此处id前加了冒号，表示要匹配id，代表放的是参数，
+        { path:'/home/photolist',component:PhotoList}
     ],
     linkActiveClass:'mui-active'   //覆盖默认的路由高亮的类，默认的类叫做router-link-active
 })

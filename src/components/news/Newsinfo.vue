@@ -5,7 +5,7 @@
         <!-- 子标题 -->
         <p class="subtitle">
             <span>发表时间：{{newsinfo.add_time | dataFormat}}</span>
-            <span>点击：{{newsinfo.click}}</span>
+            <span>点击：{{newsinfo.click}} 次</span>
         </p>
         <hr/>
         <!-- 新闻内容区域 -->
@@ -34,11 +34,11 @@ export default {
     },
     methods:{
         getNewsInfo(){
-            this.$http.get('/api/getnew/'+this.id).then(result => {
+            this.$http.get('api/getnew/'+this.id).then(result => {
                 if(result.body.status === 0){
                     console.log(result.body);
                     this.newsinfo = result.body.message[0];
-                    Toast('获取新闻详情成功')
+                    // Toast('获取新闻详情成功')
                 }else{
                     Toast('获取新闻详情失败')
                 }
