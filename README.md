@@ -2,14 +2,14 @@
 
 
 ## 一、制作首页App组件
-1、完成Header区域，使用的是Mint-UI中的Header组件
-2、制作底部的Tabbar区域，使用的是muui中的Tabbar组件
-   2.1  先把扩展图标的css样式拷贝到项目中，根据错误提示导入相应的扩展包
-3、要在中间区域放置一个router-view来展示路由匹配到的组件
-4、创建路由实例对象后，把tabbar的a标签改成router-link标签
-5、制作Tabbar的组件，设置成路由
-6、在main.js中导入Tabbar组件，在路由对象中绑定路由
-7、制作切换Tabbar的动画
+# 1、完成Header区域，使用的是Mint-UI中的Header组件
+# 2、制作底部的Tabbar区域，使用的是muui中的Tabbar组件
+#   2.1  先把扩展图标的css样式拷贝到项目中，根据错误提示导入相应的扩展包
+# 3、要在中间区域放置一个router-view来展示路由匹配到的组件
+# 4、创建路由实例对象后，把tabbar的a标签改成router-link标签
+# 5、制作Tabbar的组件，设置成路由
+# 6、在main.js中导入Tabbar组件，在路由对象中绑定路由
+# 7、制作切换Tabbar的动画
 
 ## 二、制作首页轮播图
 1、轮播图使用Mint-UI中的swipe组件
