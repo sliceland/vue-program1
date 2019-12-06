@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 //导入格式化时间的插件
-import mpment from 'moment'
+import moment from 'moment'
 //定义全局过滤器
 Vue.filter('dataFormat',function(dataStr,pattern="YYYY-MM-DD HH:mm:ss"){
     return moment(dataStr).format(pattern)
@@ -41,8 +41,8 @@ Vue.use(MintUI)
 
 
 import app from './app.vue'   //导入app组件
-import { filter } from 'minimatch'
-import moment from 'moment'
+// import { filter } from 'minimatch'
+// import moment from 'moment'
 
 // 定义路由对象
 var router = new VueRouter({
@@ -54,7 +54,7 @@ var router = new VueRouter({
         { path:'/search',component: SearchContainer },
 
         { path:'/home/newslist',component:NewsList},
-        { path: '/home/newsinfo/:id',component:Newsinfo}
+        { path: '/home/newsinfo/:id',component:Newsinfo} //此处id前加了冒号，表示要匹配id，代表放的是参数，
     ],
     linkActiveClass:'mui-active'   //覆盖默认的路由高亮的类，默认的类叫做router-link-active
 })

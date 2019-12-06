@@ -2,7 +2,7 @@
     <div>
         <ul class="mui-table-view">
 			<li class="mui-table-view-cell mui-media" v-for="item in newslist" :key='item.id'>
-				<router-link :to="'/home/newsinfo' + item.id">
+				<router-link :to="'/home/newsinfo/' + item.id">
 				
 					<img class="mui-media-object mui-pull-left" :src="item.img_url">
 					<div class="mui-media-body">						
@@ -37,7 +37,7 @@ export default{   //获取新闻列列表
 				if(result.body.status ===0){
 					console.log(result.body);
 					this.newslist = result.body.message;
-					Toast('获取新闻列表成功')
+					// Toast('获取新闻列表成功')
 				}else{
 					Toast('获取新闻列表失败')
 				}

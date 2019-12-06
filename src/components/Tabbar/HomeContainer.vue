@@ -61,7 +61,7 @@ export default {
                 if(result.body.status === 0){
                     
                     this.lunbotuList = result.body.message;
-                    Toast ('数据获取成功')
+                    // Toast ('数据获取成功')
                 }else{
                     Toast ('数据获取失败！！！')
                 }
