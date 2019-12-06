@@ -58,9 +58,7 @@ export default {
 </script>
 
 <style scoped>
-.cmt-container{
-    
-}
+
 h3{
         font-size: 18px;
     }

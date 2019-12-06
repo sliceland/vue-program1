@@ -13,12 +13,10 @@
 						</p>
 					</div>
 				</router-link>
-			</li>
 			
 		</ul>
     </div>
 </template>
-
 
 <script>
 import {Toast} from 'mint-ui'
