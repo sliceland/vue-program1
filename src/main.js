@@ -1,3 +1,5 @@
+
+
 import Vue from '../node_modules/vue/dist/vue'      //这是完整的vue包
 // 导入路由的包
 import VueRouter from 'vue-router'
@@ -11,9 +13,18 @@ Vue.filter('dataFormat',function(dataStr,pattern="YYYY-MM-DD HH:mm:ss"){
 })
 
 
-// 导入vue-resource  获取轮播图数据
+// 导入vue-resource  
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
+
+// 导入v-viewer获取轮播图
+import Viewer from 'v-viewer'
+import 'viewerjs/dist/viewer.css'
+Vue.use(Viewer)
+
+//安装图片预览插件,获取轮播图数据(不使用vue-resource了，不会用)
+// import VuePreview from 'vue-preview'
+// Vue.use(VuePreview)
 
 Vue.http.options.root = 'http://www.liulongbin.top:3005'  //配置vueresource的全局接口，将来要是接口改变只需修改这里即可，必须放在Vue.use(VueResource)之后
 //全局设置 post 请求时表单数据格式组织形式  
@@ -32,6 +43,7 @@ import PhotoList from './components/photos/PhotoList.vue'
 
 // 导入三级路由
 import Newsinfo from './components/news/Newsinfo.vue'
+import PhotoInfo from './components/photos/PhotoInfo.vue'
 
 import './lib/mui/css/mui.css'
 import './lib/mui/css/icons-extra.css'
@@ -57,7 +69,8 @@ var router = new VueRouter({
 
         { path:'/home/newslist',component:NewsList},
         { path: '/home/newsinfo/:id',component:Newsinfo}, //此处id前加了冒号，表示要匹配id，代表放的是参数，
-        { path:'/home/photolist',component:PhotoList}
+        { path:'/home/photolist',component:PhotoList},
+        { path:'/home/photoinfo/:id',component:PhotoInfo},
     ],
     linkActiveClass:'mui-active'   //覆盖默认的路由高亮的类，默认的类叫做router-link-active
 })

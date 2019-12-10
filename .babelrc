@@ -1,0 +1,4 @@
+{
+    "presets": [],
+    "plugins": ["transform-remove-strict-mode"]
+}

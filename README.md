@@ -4,7 +4,7 @@
 ### 一、制作首页App组件
 1、完成Header区域，使用的是Mint-UI中的Header组件
 
-2、制作底部的Tabbar区域，使用的是muui中的Tabbar组件
+2、制作底部的Tabbar区域，使用的是mui中的Tabbar组件
 
   2.1  先把扩展图标的css样式拷贝到项目中，根据错误提示导入相应的扩展包
 
@@ -77,3 +77,61 @@
 
    ## 六、首页的图片分享改造成路由
    1、改造图片分享按钮为路由的链接并显示对应的组件页面
+
+   2、绘制图片列表，组件页面结构并美化样式
+
+    2.1 制作顶部的滑动条,使用MUI中的tab-top-webview-main.html，然后需要把slide区域的mui-fullscreen类去掉
+
+    2.2 制作底部的图片列表
+
+    2.3 滑动条无法正常触发滑动，通过检查官方文档，发现这是js组件，需要被初始化
+
+    2.4 导入mui.js，调用官方提供的方式去初始化
+
+    ---
+
+    mui('.mui-scroll-wrapper').scroll({
+
+      deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+
+    });
+
+    ---
+    2.5 在初始化滑动条的时候导入的mui.js
+
+     ### 移除webpack的严格模式
+
+        1、安装移除严格模式的插件：npm install babel-plugin-transform-remove-strict-mode，然后在.babelrc文件下配
+           
+        置插件
+
+        {
+            "plugins": ["transform-remove-strict-mode"]
+          }
+
+     ### 遇到的问题：
+
+          @1、引入mui的顶部滑动条之后，滑动条无法滑动
+
+            解：刚进入图片分享页面的时候，滑动条无法正常工作，经过分析发现，如果要初始化滑动条，必须要等到DOM 元素加载
+            
+            完毕，所以把初始化滑动条的代码，放到mounted钩子函数里面。
+
+          @2、底部的Tabbar无法切换
+
+            解：app.vue组件里的router-link里的类mui-tab-item与mui自身冲突，修改这个类名为
+            
+            mui-tab-item-lib，把mui-tab-item类下相关的css样式都复制到mui-tab-item-lib下。
+
+  3、制作图片列表区域
+
+    3.1 图片列表使用懒加载技术，使用mint-ui提供的现成的组件"lazy load"
+
+    3.2 实现点击图片跳转到图片详情页
+
+        在改造li标签成router-link标签时，记得使用tag属性指定要渲染为哪种元素
+
+    3.3 搭建出图片详情页的结构，评论部分使用已经写好的comment组件
+
+    3.4 中间缩略图部分使用v-viewer插件
+        先安装插件：npm i v-viewer  然后在main.js里导入包
