@@ -37,13 +37,19 @@ import ShopcarContainer from './components/Tabbar/ShopcarContainer.vue'
 import SearchContainer from './components/Tabbar/SearchContainer.vue'
 
 
-//导入二级路由了
+//导入二级路由
 import NewsList from './components/news/NewsList.vue'
 import PhotoList from './components/photos/PhotoList.vue'
+import GoodsList from './components/goods/GoodsList.vue'
 
 // 导入三级路由
 import Newsinfo from './components/news/Newsinfo.vue'
 import PhotoInfo from './components/photos/PhotoInfo.vue'
+import GoodsInfo from './components/goods/GoodsInfo.vue'
+
+// 导入四级路由
+import GoodsDesc from './components/goods/GoodsDesc.vue'
+import GoodsComments from './components/goods/GoodsComments.vue'
 
 import './lib/mui/css/mui.css'
 import './lib/mui/css/icons-extra.css'
@@ -71,6 +77,10 @@ var router = new VueRouter({
         { path: '/home/newsinfo/:id',component:Newsinfo}, //此处id前加了冒号，表示要匹配id，代表放的是参数，
         { path:'/home/photolist',component:PhotoList},
         { path:'/home/photoinfo/:id',component:PhotoInfo},
+        { path:'/home/goodslist',component:GoodsList},
+        { path:'/home/goodsinfo/:id',component:GoodsInfo},
+        { path:'/home/goodsdesc/:id',component:GoodsDesc,name:'goodsdesc'},
+        { path:'/home/goodscomments/:id',component:GoodsComments,name:'goodscomments'}
     ],
     linkActiveClass:'mui-active'   //覆盖默认的路由高亮的类，默认的类叫做router-link-active
 })
