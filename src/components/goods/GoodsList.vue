@@ -77,8 +77,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding:7px;
-    
+    padding:5px;  
 }
 .good-item{
     width: 49%;
@@ -95,14 +94,15 @@ export default {
     width: 100%;
 }
 h3{
+    margin: 2px;
     font-size: 14px;
+    text-align: left;
 }
 .info{
     background-color: #eeeeee;
 }
 .info p{
     margin: 0;
-
     font-size: 8px;
 }
 .info .now{
