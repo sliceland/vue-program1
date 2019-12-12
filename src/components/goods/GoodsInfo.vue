@@ -62,7 +62,7 @@ import GoodInfo_numbox from '../subcomponents/goosinfo_numbox.vue'
 export default {
     data(){
         return{
-            id:this.$route.params.id,    //将路由参数对象中的eid挂载到data
+            id:this.$route.params.id,    //将路由参数对象中的id挂载到data
             lunbotu:[],
             goodsinfo:[],
             ballFlag:true,     //小球初始状态
@@ -102,6 +102,17 @@ export default {
         
         addToShopcar(){   //添加到购物车事件
             this.ballFlag=!this.ballFlag;
+
+            // {id:商品的di,count:商品数量,price:商品单价,selected:false}
+            //拼接出一个要保存到store中car数组里的商品信息对象
+            var goodsinfom = {
+                id:this.id,
+                count:this.selectCount,
+                price:this.goodsinfo.sell_price,
+                selected:true
+            }
+            //调用store中的mutation来讲商品加入购物车
+            this.$store.commit('addToCar',goodsinfom)
         },
 
         //小球动画

@@ -16,7 +16,7 @@ export default {
     },
     methods:{
         countChange(){    //每当文本框的数据改变时，立即把最新的数据，通过实践调用传递给父组件
-        console.log(this.$refs.numbox.value);
+        // console.log(this.$refs.numbox.value);
             this.$emit('getCount',parseInt(this.$refs.numbox.value));
         }
     },
