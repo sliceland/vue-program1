@@ -19,7 +19,7 @@ module.exports = {
     // package.json的name参数是按照文件夹名字自动生成，当然也可以自己修改，但是不能为webpack。
     devServer:{  //webpack-dev-server第二种配置方式
         open:true,  //自动打开浏览器
-        // port:3000,   //设置运行端口
+        port:3000,   //设置运行端口
         contentBase:'src',  //指定托管根目录
         hot:true  //启用热更新     的第一步
     },
