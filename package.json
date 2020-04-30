@@ -14,7 +14,7 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "babel-plugin-transform-remove-strict-mode": "0.0.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mint-ui": "^2.2.13",
     "moment": "^2.24.0",
     "v-viewer": "^1.4.2",
